@@ -21,13 +21,13 @@ INSERT INTO classes (class_id, name, description, capacity, duration, location_i
 ('2', 'Yoga Basics', 'Beginner level yoga', '15', '60', '1'),
 ('3', 'HIIT', 'High Interval Intensity Training', '10', '30', '2');
 
-INSERT INTO schedule (schedule_id, class_id, staff_id, start_time, end_time) VALUES
+INSERT INTO class_schedule (schedule_id, class_id, staff_id, start_time, end_time) VALUES
 ('1', '1', '2', '2025-02-01 09:00:00', '2025-02-01 09:45:00'),
 ('2', '2', '4', '2025-02-01 10:00:00', '2025-02-01 11:00:00'),
 ('3', '3', '2', '2025-02-02 18:00:00', '2025-02-02 18:30:00'),
 ('7', '2', '4', '2025-02-05 12:00:00', '2025-02-05 13:00:00');
 
-INSERT INTO membership (membership_id, member_id, type, start_date, end_date, status) VALUES
+INSERT INTO memberships (membership_id, member_id, type, start_date, end_date, status) VALUES
 ('1', '1', 'Standard', '2024-01-01', '2025-01-01', 'Inactive'),
 ('2', '2', 'Premium', '2024-06-15', '2025-06-15', 'Active'),
 ('3', '3', 'Standard', '2024-03-20', '2025-03-20', 'Active'),
@@ -50,7 +50,7 @@ INSERT INTO class_attendance (class_attendance_id, schedule_id, member_id, atten
 ('14', '8', '2', 'Attended'),
 ('15', '9', '5', 'Attended');
 
-INSERT INTO payment (payment_id, member_id, amount, payment_date, payment_method, payment_type) VALUES
+INSERT INTO payments (payment_id, member_id, amount, payment_date, payment_method, payment_type) VALUES
 ('1', '1', '40.00', '2024-11-01 10:00:00', 'Credit Card', 'Monthly membership fee'),
 ('2', '2', '60.00', '2024-11-15 12:00:00', 'Bank Transfer', 'Monthly membership fee'),
 ('3', '3', '40.00', '2024-12-20 09:00:00', 'Credit Card', 'Monthly membership fee'),
@@ -59,16 +59,16 @@ INSERT INTO payment (payment_id, member_id, amount, payment_date, payment_method
 ('6', '2', '60.00', '2025-01-15 12:00:00', 'Bank Transfer', 'Monthly membership fee'),
 ('7', '11', '20.00', '2025-01-20 15:30:00', 'Cash', 'Day pass');
 
-INSERT INTO session (session_id, member_id, staff_id, session_date, start_time, end_time, notes) VALUES
+INSERT INTO personal_training_sessions (session_id, member_id, staff_id, session_date, start_time, end_time, notes) VALUES
 ('1', '1', '2', '2025-01-25', '09:00:00', '10:00:00', 'Cardio focus'),
 ('2', '3', '2', '2025-01-28', '14:00:00', '15:00:00', 'Strength training'),
 ('3', '5', '2', '2025-02-04', '10:00:00', '11:00:00', 'Form check');
 
-INSERT INTO metric (metric_id, member_id, measurement_date, weight, body_fat_percentage, muscle_mass, bmi) VALUES
+INSERT INTO member_health_metrics (metric_id, member_id, measurement_date, weight, body_fat_percentage, muscle_mass, bmi) VALUES
 ('1', '5', '2025-01-10', '65.0', '22.5', '48.0', '24.1'),
 ('2', '3', '2025-01-15', '80.0', '18.0', '60.0', '25.5');
 
-INSERT INTO maintenance_log (log_id, equipment_id, maintenance_date, description, staff_id) VALUES
+INSERT INTO equipment_maintenance_log (log_id, equipment_id, maintenance_date, description, staff_id) VALUES
 ('1', '1', '2024-12-15', 'Belt replacement', '1'),
 ('2', '2', '2024-07-20', 'Oiling and sensor check', '1'),
 ('3', '3', '2024-03-10', 'Safety bar adjustment', '1');
