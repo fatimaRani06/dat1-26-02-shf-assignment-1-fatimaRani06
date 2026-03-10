@@ -6,7 +6,7 @@ SELECT staff_id, first_name AS 'First Name', last_name AS 'Last Name', position
 FROM staff
 ORDER BY position;
 
-
+-- 7.2
 INSERT INTO personal_training_sessions (member_id, staff_id, session_date, start_time, end_time, notes)
 SELECT 1, 1, '2025-03-10', '08:00:00', '09:00:00', 'Test session for query 2'
 WHERE NOT EXISTS (

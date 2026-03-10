@@ -127,11 +127,11 @@ CREATE TABLE class_attendance (
 -- PAYMENTS
 -- ============================
 CREATE TABLE payments (
-    payment_id SERIAL PRIMARY KEY,
+    payment_id PRIMARY KEY,
     member_id INT REFERENCES members(member_id),
     amount DECIMAL(10,2) NOT NULL,
     payment_date TIMESTAMP NOT NULL,
-    payment_method VARCHAR(50) CHECK (payment_method IN ('Credit Card','Bank Transfer','PayPal')),
+    payment_method VARCHAR(50) CHECK (payment_method IN ('Credit Card','Bank Transfer','PayPal', 'Cash')),
     payment_type VARCHAR(100) CHECK (payment_type IN ('Monthly membership fee','Day pass'))
 );
 
